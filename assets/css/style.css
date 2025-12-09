@@ -1,0 +1,83 @@
+/* Navbar customization */
+.custom-navbar {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+}
+
+/* Brand text */
+.navbar-brand {
+  font-size: 1.35rem;
+  letter-spacing: 1px;
+  color: #fff !important;
+}
+
+/* SVG Logo Icon */
+.logo-icon {
+  width: 34px;
+  height: 34px;
+  margin-right: 10px;
+  color: #00ff9c; /* neon music accent */
+  display: flex;
+  align-items: center;
+}
+
+.logo-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Logo Text */
+.logo-text {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Navbar links */
+.navbar .nav-link {
+  margin-left: 15px;
+  font-weight: 500;
+  color: #fff !important;
+}
+
+.navbar .nav-link:hover {
+  color: #00ff9c !important;
+}
+/* HERO SECTION */
+.hero-section {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+
+/* Feature cards */
+.feature-card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.25);
+}
+footer {
+        background: #1a1a1a;
+        color: #fff;
+        padding: 40px 0;
+      }
+
+      footer a {
+        color: #00ff9c;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        color: #fff;
+      }
+
+      footer .social-icons a {
+        margin: 0 10px;
+        font-size: 1.25rem;
+      }
+
+      pre {
+        font-size: 0.85rem;
+      }

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MP3 Song downloader</title>
+    <link rel="icon" type="image/x-icon" href="./assets/images/icon.png">
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!--Header Section-->
+    <!-- Header / Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+      <div class="container">
+        <!-- Logo / Brand -->
+        <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
+          <span class="logo-icon">
+            <svg viewBox="0 0 104.23 122.88" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M87.9,78.04c2.74-0.48,5.33-0.4,7.6,0.13V24.82L39.05,41.03v61.95c0.03,0.34,0.05,0.69,0.05,1.03c0,8.34-8.75,16.62-19.55,18.49C8.76,124.37,0,119.12,0,110.77c0-8.34,8.76-16.62,19.55-18.48c4.06-0.7,7.84-0.39,10.97,0.71V16.75L104.04,0v85.92c0.13,0.63,0.2,1.27,0.2,1.91c0,6.97-7.32,13.89-16.33,15.44c-9.02,1.56-16.33-2.83-16.33-9.8C71.57,86.51,78.88,79.59,87.9,78.04z"
+              />
+            </svg>
+          </span>
+          <span class="logo-text">MP3 Downloader Pro</span>
+        </a>
+
+        <!-- Mobile Toggle -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mp3Navbar"
+          aria-controls="mp3Navbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu -->
+        <div class="collapse navbar-collapse" id="mp3Navbar">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+            <li class="nav-item">
+              <a class="nav-link active" href="#home">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#howtouse">How to Install</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#features">Features</a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link d-flex align-items-center"
+                href="https://github.com/anburocky3/tamil-mp3-downloader"
+                target="_blank"
+                title="GitHub Repository"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 50 50"
+                  width="30"
+                  height="30"
+                  class="me-1"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M17.791,46.836C18.502,46.53,19,45.823,19,45v-5.4c0-0.197,0.016-0.402,0.041-0.61C19.027,38.994,19.014,38.997,19,39 c0,0-3,0-3.6,0c-1.5,0-2.8-0.6-3.4-1.8c-0.7-1.3-1-3.5-2.8-4.7C8.9,32.3,9.1,32,9.7,32c0.6,0.1,1.9,0.9,2.7,2c0.9,1.1,1.8,2,3.4,2 c2.487,0,3.82-0.125,4.622-0.555C21.356,34.056,22.649,33,24,33v-0.025c-5.668-0.182-9.289-2.066-10.975-4.975 c-3.665,0.042-6.856,0.405-8.677,0.707c-0.058-0.327-0.108-0.656-0.151-0.987c1.797-0.296,4.843-0.647,8.345-0.714 c-0.112-0.276-0.209-0.559-0.291-0.849c-3.511-0.178-6.541-0.039-8.187,0.097c-0.02-0.332-0.047-0.663-0.051-0.999 c1.649-0.135,4.597-0.27,8.018-0.111c-0.079-0.5-0.13-1.011-0.13-1.543c0-1.7,0.6-3.5,1.7-5c-0.5-1.7-1.2-5.3,0.2-6.6 c2.7,0,4.6,1.3,5.5,2.1C21,13.4,22.9,13,25,13s4,0.4,5.6,1.1c0.9-0.8,2.8-2.1,5.5-2.1c1.5,1.4,0.7,5,0.2,6.6c1.1,1.5,1.7,3.2,1.6,5 c0,0.484-0.045,0.951-0.11,1.409c3.499-0.172,6.527-0.034,8.204,0.102c-0.002,0.337-0.033,0.666-0.051,0.999 c-1.671-0.138-4.775-0.28-8.359-0.089c-0.089,0.336-0.197,0.663-0.325,0.98c3.546,0.046,6.665,0.389,8.548,0.689 c-0.043,0.332-0.093,0.661-0.151,0.987c-1.912-0.306-5.171-0.664-8.879-0.682C35.112,30.873,31.557,32.75,26,32.969V33 c2.6,0,5,3.9,5,6.6V45c0,0.823,0.498,1.53,1.209,1.836C41.37,43.804,48,35.164,48,25C48,12.318,37.683,2,25,2S2,12.318,2,25 C2,35.164,8.63,43.804,17.791,46.836z"
+                  />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!--Hero section-->
+    <!-- ================= HERO / MAIN SECTION ================= -->
+    <section id="home" class="hero-section text-white">
+      <div class="container">
+        <div class="row align-items-center min-vh-100 pt-5 mt-5">
+          <!-- Left Content -->
+          <div class="col-lg-6 text-center text-lg-start">
+            <h1 class="display-5 fw-bold mb-3">
+              Download High Quality MP3 Songs
+            </h1>
+
+            <p class="lead mb-4">
+              Download thousands of high-quality MP3 songs (320kbps) in a single
+              run. Supports Hindi, Tamil, Telugu, Malayalam & more.
+            </p>
+
+            <div
+              class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start"
+            >
+              <a href="#howtouse" class="btn btn-light btn-lg fw-semibold">
+                <i class="fa-solid fa-download me-2"></i> How to Install
+              </a>
+
+              <a
+                href="https://github.com/anburocky3/tamil-mp3-downloader"
+                target="_blank"
+                class="btn btn-outline-light btn-lg fw-semibold"
+              >
+                <i class="fa-brands fa-github me-2"></i> GitHub
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Content -->
+          <div class="col-lg-6 mt-5 mt-lg-0">
+            <div class="row g-4">
+              <div class="col-6">
+                <div class="feature-card p-4 text-center h-100">
+                  <i class="fa-solid fa-music fa-2x mb-3"></i>
+                  <h6 class="fw-bold">Multiple Languages</h6>
+                  <p class="small mb-0">Hindi, Tamil, Telugu, Malayalam</p>
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="feature-card p-4 text-center h-100">
+                  <i class="fa-solid fa-bolt fa-2x mb-3"></i>
+                  <h6 class="fw-bold">Fast Downloads</h6>
+                  <p class="small mb-0">Bulk & smart downloading</p>
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="feature-card p-4 text-center h-100">
+                  <i class="fa-solid fa-folder-open fa-2x mb-3"></i>
+                  <h6 class="fw-bold">Organized Files</h6>
+                  <p class="small mb-0">Auto folder structure</p>
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="feature-card p-4 text-center h-100">
+                  <i class="fa-solid fa-desktop fa-2x mb-3"></i>
+                  <h6 class="fw-bold">Windows EXE</h6>
+                  <p class="small mb-0">Ready-to-use executable</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ======================================================= -->
+    <!-- How to Install Section -->
+    <section id="howtouse" class="py-5 bg-light">
+      <div class="container">
+        <!-- Section Title -->
+        <div class="row mb-5">
+          <div class="col text-center">
+            <h2 class="fw-bold">How to Install</h2>
+            <p class="text-muted mt-2">
+              Follow these simple steps to get the MP3 Downloader running on
+              your system
+            </p>
+          </div>
+        </div>
+
+        <!-- Step Cards -->
+        <div class="row g-4">
+          <!-- Step 1 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body">
+                <h5 class="fw-bold">
+                  <i class="fa-brands fa-github me-2"></i> Step 1
+                </h5>
+                <p class="text-muted mt-2 mb-2">
+                  Fork the repository and clone it to your local machine:
+                </p>
+                <pre class="bg-dark text-light p-2 rounded small mb-0">
+git clone https://github.com/yourName/tamil-mp3-downloader.git
+cd tamil-mp3-downloader
+            </pre
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body">
+                <h5 class="fw-bold">
+                  <i class="fa-brands fa-python me-2"></i> Step 2
+                </h5>
+                <p class="text-muted mt-2 mb-2">
+                  Make sure Python 3.10+ is installed:
+                </p>
+                <pre class="bg-dark text-light p-2 rounded small mb-0">
+python --version
+            </pre
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body">
+                <h5 class="fw-bold">
+                  <i class="fa-solid fa-box me-2"></i> Step 3
+                </h5>
+                <p class="text-muted mt-2 mb-2">
+                  Install required dependencies:
+                </p>
+                <pre class="bg-dark text-light p-2 rounded small mb-0">
+pip install -r requirements.txt
+            </pre
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body">
+                <h5 class="fw-bold">
+                  <i class="fa-solid fa-play me-2"></i> Step 4
+                </h5>
+                <p class="text-muted mt-2 mb-2">Run the application:</p>
+                <pre class="bg-dark text-light p-2 rounded small mb-0">
+python main.py
+            </pre
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Extra Info -->
+        <div class="row mt-5">
+          <div class="col-lg-10 mx-auto">
+            <div class="alert alert-info shadow-sm">
+              <h6 class="fw-bold mb-2">
+                <i class="fa-solid fa-download me-2"></i> Windows Users
+              </h6>
+              <p class="mb-0">
+                You can also download a ready-to-run
+                <strong>Windows EXE</strong> from the
+                <strong>Releases</strong> page. Refer to
+                <code>DOWNLOAD.md</code> for details.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- File Location -->
+        <div class="row mt-4">
+          <div class="col-lg-10 mx-auto">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body">
+                <h6 class="fw-bold">
+                  <i class="fa-solid fa-folder-open me-2"></i> Download Location
+                </h6>
+                <p class="mb-1 text-muted">Downloaded files are saved to:</p>
+                <pre class="bg-dark text-light p-2 rounded small mb-0">
+output/&lt;CategoryName&gt;/&lt;AlbumName&gt;/
+            </pre
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- License & Author -->
+        <div class="row mt-5">
+          <div class="col text-center">
+            <p class="mb-1"><strong>License:</strong> MIT</p>
+            <p class="mb-0"><strong>Author:</strong> Anbuselvan Rocky</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Features Section -->
+    <section id="features" class="py-5">
+      <div class="container">
+        <!-- Title -->
+        <div class="row mb-5">
+          <div class="col text-center">
+            <h2 class="fw-bold">Features</h2>
+            <p class="text-muted">
+              Explore music categories and download your favorite songs easily
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="accordion" id="featuresAccordion">
+              <!-- Star Hits -->
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#starHits"
+                  >
+                    ⭐ Star Hits
+                  </button>
+                </h2>
+                <div
+                  id="starHits"
+                  class="accordion-collapse collapse show"
+                  data-bs-parent="#featuresAccordion"
+                >
+                  <div class="accordion-body">
+                    <ul class="list-group">
+                      <li class="list-group-item">Vijay Hits</li>
+                      <li class="list-group-item">Ajith Hits</li>
+                      <li class="list-group-item">Suriya Hits</li>
+                      <li class="list-group-item">Rajini Hits</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Music Directors -->
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#musicDirectors"
+                  >
+                    🎼 Music Director Hits
+                  </button>
+                </h2>
+                <div
+                  id="musicDirectors"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#featuresAccordion"
+                >
+                  <div class="accordion-body">
+                    <ul class="list-group">
+                      <li class="list-group-item">A.R. Rahman</li>
+                      <li class="list-group-item">Ilaiyaraaja</li>
+                      <li class="list-group-item">Yuvan Shankar Raja</li>
+                      <li class="list-group-item">Anirudh</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Old Songs -->
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#oldSongs"
+                  >
+                    📻 Old Songs
+                  </button>
+                </h2>
+                <div
+                  id="oldSongs"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#featuresAccordion"
+                >
+                  <div class="accordion-body">
+                    <ul class="list-group">
+                      <li class="list-group-item">80s Evergreen</li>
+                      <li class="list-group-item">90s Hits</li>
+                      <li class="list-group-item">Melody Classics</li>
+                      <li class="list-group-item">Old Love Songs</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Ringtones -->
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#ringtones"
+                  >
+                    🔔 Ringtones
+                  </button>
+                </h2>
+                <div
+                  id="ringtones"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#featuresAccordion"
+                >
+                  <div class="accordion-body">
+                    <ul class="list-group">
+                      <li class="list-group-item">Bgms</li>
+                      <li class="list-group-item">Dialogue Tones</li>
+                      <li class="list-group-item">Love Ringtones</li>
+                      <li class="list-group-item">Sad Tones</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Instruments -->
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#instruments"
+                  >
+                    🎸 Instruments
+                  </button>
+                </h2>
+                <div
+                  id="instruments"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#featuresAccordion"
+                >
+                  <div class="accordion-body">
+                    <ul class="list-group">
+                      <li class="list-group-item">Flute Music</li>
+                      <li class="list-group-item">Piano Covers</li>
+                      <li class="list-group-item">Guitar Instrumentals</li>
+                      <li class="list-group-item">Violin Melodies</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Footer section-->
+    <footer>
+      <div class="container text-center">
+        <h5 class="mb-4">MP3 Downloader Pro</h5>
+        <p class="mb-2">
+          Download high-quality MP3 songs from your favorite categories.
+        </p>
+        <div class="social-icons mb-3">
+          <a href="https://www.instagram.com/anbuselvanrocky/"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="https://github.com/anburocky3/tamil-mp3-downloader"
+            ><i class="fab fa-github"></i
+          ></a>
+        </div>
+        <p class="mb-0">
+          &copy; 2025 Anbuselvan Rocky. All Rights Reserved. | MIT License
+        </p>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
